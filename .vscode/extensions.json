@@ -1,5 +1,12 @@
 {
+<<<<<<< HEAD
     "recommendations": [
        "Webnative.webnative"
     ]
 }
+=======
+  "recommendations": [
+    "Webnative.webnative"
+  ]
+}
+>>>>>>> d3ec8b8cde8e6930064e221f1492a324b574fe3f

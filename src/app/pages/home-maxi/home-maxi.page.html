@@ -1,0 +1,75 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <div class="saludo">
+      <div>
+        <h1>Hola, {{ nombreUsuario }} 👋</h1>
+        <p>Encuentra lo mejor para tu mascota</p>
+      </div>
+      <ion-buttons>
+        <ion-button aria-label="Notificaciones">
+          <ion-icon slot="icon-only" name="notifications-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <label class="buscador">
+    <ion-icon name="search-outline"></ion-icon>
+    <input type="search" placeholder="Buscar productos..." />
+  </label>
+
+  <section class="categorias">
+    @for (cat of categorias; track cat.nombre) {
+      <button type="button" class="categoria">
+        <span class="categoria__icono" [class]="'categoria__icono ' + cat.color">
+          <ion-icon [name]="cat.icono"></ion-icon>
+        </span>
+        <span class="categoria__nombre">{{ cat.nombre }}</span>
+      </button>
+    }
+  </section>
+
+  <section class="banner">
+    <div class="banner__texto">
+      <h2>Comida BARF 100% natural</h2>
+      <p>La mejor nutrición para una vida saludable</p>
+      <ion-button size="small" shape="round" class="banner__boton">Ver más</ion-button>
+    </div>
+    <img
+      class="banner__imagen"
+      src="assets/barf-banner.png"
+      alt="Comida BARF con carne y vegetales frescos"
+    />
+  </section>
+
+  <section class="destacados">
+    <div class="destacados__encabezado">
+      <h3>Productos destacados</h3>
+      <a href="#" class="ver-todos">Ver todos</a>
+    </div>
+
+    <div class="destacados__grid">
+      @for (p of productos; track p.nombre) {
+        <article class="producto">
+          <img [src]="p.imagen" [alt]="p.nombre" />
+          <h4>{{ p.nombre }}</h4>
+          <div class="producto__pie">
+            <span class="producto__precio">
+              {{ p.precio | currency: 'COP' : 'symbol-narrow' : '1.0-0' }}
+            </span>
+            <button
+              type="button"
+              class="producto__agregar"
+              [attr.aria-label]="'Agregar ' + p.nombre + ' al carrito'"
+              (click)="agregarAlCarrito(p)"
+            >
+              <ion-icon name="add"></ion-icon>
+            </button>
+          </div>
+        </article>
+      }
+    </div>
+  </section>
+</ion-content>

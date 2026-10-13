@@ -1,0 +1,246 @@
+:host {
+  --verde: #1f9d55;
+  --verde-oscuro: #0f6b3a;
+  --naranja: #f5a524;
+  --rojo: #e5484d;
+  --texto: #1c2b24;
+  --texto-suave: #6b7a73;
+  --fondo-suave: #f3f6f4;
+
+  ion-toolbar {
+    --background: #fff;
+    --padding-top: 12px;
+  }
+
+  ion-content {
+    --background: #fff;
+    --padding-start: 16px;
+    --padding-end: 16px;
+  }
+}
+
+.saludo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+
+  h1 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--texto);
+  }
+
+  p {
+    margin: 2px 0 0;
+    font-size: 14px;
+    color: var(--texto-suave);
+  }
+
+  ion-button {
+    --color: var(--texto);
+  }
+}
+
+.buscador {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 8px 0 20px;
+  padding: 12px 16px;
+  border-radius: 14px;
+  background: var(--fondo-suave);
+  color: var(--texto-suave);
+
+  input {
+    flex: 1;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    font-size: 15px;
+    color: var(--texto);
+  }
+
+  &:focus-within {
+    outline: 2px solid var(--verde);
+  }
+}
+
+.categorias {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.categoria {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+
+  &__icono {
+    display: grid;
+    place-items: center;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    font-size: 30px;
+
+    &.naranja { background: #fdebd0; color: var(--naranja); }
+    &.rojo    { background: #fbdcdc; color: var(--rojo); }
+    &.verde   { background: #d9f0e2; color: var(--verde); }
+  }
+
+  &__nombre {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--texto);
+  }
+}
+
+.banner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 140px;
+  margin-bottom: 24px;
+  padding: 18px;
+  overflow: hidden;
+  border-radius: 20px;
+  background: linear-gradient(135deg, var(--verde-oscuro), var(--verde));
+  color: #fff;
+
+  &__texto {
+    position: relative;
+    z-index: 1;
+    max-width: 55%;
+
+    h2 {
+      margin: 0 0 6px;
+      font-size: 20px;
+      line-height: 1.15;
+      font-weight: 800;
+    }
+
+    p {
+      margin: 0 0 12px;
+      font-size: 12px;
+      opacity: 0.9;
+    }
+  }
+
+  &__boton {
+    --background: var(--naranja);
+    --color: #1c2b24;
+    font-weight: 700;
+    text-transform: none;
+  }
+
+  &__imagen {
+    position: absolute;
+    right: -10px;
+    bottom: 0;
+    height: 100%;
+    width: 55%;
+    object-fit: cover;
+  }
+}
+
+.destacados {
+  &__encabezado {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 12px;
+
+    h3 {
+      margin: 0;
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--texto);
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    padding-bottom: 16px;
+  }
+}
+
+.ver-todos {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--verde);
+  text-decoration: none;
+}
+
+.producto {
+  padding: 12px;
+  border: 1px solid #e6ece8;
+  border-radius: 16px;
+  background: #fff;
+
+  img {
+    display: block;
+    width: 100%;
+    height: 110px;
+    object-fit: contain;
+    margin-bottom: 8px;
+  }
+
+  h4 {
+    margin: 0 0 8px;
+    min-height: 34px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--texto);
+  }
+
+  &__pie {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__precio {
+    font-size: 15px;
+    font-weight: 800;
+    color: var(--texto);
+  }
+
+  &__agregar {
+    display: grid;
+    place-items: center;
+    width: 32px;
+    height: 32px;
+    border: 0;
+    border-radius: 50%;
+    background: var(--verde);
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+
+    &:focus-visible {
+      outline: 2px solid var(--verde-oscuro);
+      outline-offset: 2px;
+    }
+  }
+}
+
+ion-tab-bar {
+  --background: #fff;
+  --color: var(--texto-suave);
+  --color-selected: var(--verde);
+  border-top: 1px solid #e6ece8;
+
+  ion-badge {
+    --color: #fff;
+  }
+}
